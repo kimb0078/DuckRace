@@ -6,22 +6,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DuckTest {
 
-    DuckNumberList duckNumberList;
+    DuckNumberList duckNumberList = DuckNumberList.getInstance();
+    Generator generator = Generator.getInstance();
 
     private int duckNumber;
-
-    DuckTest(){
-        duckNumber = duckNumberList.getSize() + 1;
-        duckNumberList.addNumber(duckNumber);
-    }
 
     @Test
     int getDuckNumber() {
         return duckNumber;
-    }
-
-    @Test
-    void setDuckNumber(int duckNumber) {
-        this.duckNumber = duckNumber;
     }
 }

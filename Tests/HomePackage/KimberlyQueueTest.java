@@ -2,6 +2,7 @@ package HomePackage;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,14 +13,22 @@ class KimberlyQueueTest {
 
     ArrayList<Duck> ducks = new ArrayList<>();
 
-    //
+    @Test
+    @BeforeEach
+    void setDucks(){
+
+        KimberlyQueue queue = new KimberlyQueue();
+
+        for(int i = 0; i < 10;i++){
+            queue.addToQueue();
+        }
+    }
     @Test
     void addToQueue() {
 
-        System.out.println(ducks.get(1));
-        assertEquals(1, ducks.get(0));
-        assertNotEquals(3, ducks.get(1));
-        assertEquals(3, ducks.get(2));
+        assertEquals(1, ducks.get(0).getDuckNumber());
+        assertNotEquals(3, ducks.get(1).getDuckNumber());
+        assertEquals(3, ducks.get(2).getDuckNumber());
     }
 
     @Test

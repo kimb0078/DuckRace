@@ -5,12 +5,10 @@ import java.util.ArrayList;
 
 public class KimberlyQueue {
 
-    Generator generator;
-
     private ArrayList<Duck> ducks = new ArrayList<>();
 
-    public void addToQueue(int i){
-        ducks.add(i,new Duck(generator.generate()));
+    public void addToQueue(){
+        ducks.add(new Duck());
     }
 
     public void removeFromQueue(){

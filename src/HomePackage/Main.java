@@ -4,22 +4,16 @@ import java.util.ArrayList;
 
 public class Main {
 
-    static DuckNumberList duckNumberList;
-    static ArrayList<KimberlyQueue> queueList = new ArrayList<KimberlyQueue>();
+    public static void main(String[] args){
 
-    public static void main(String[] args) throws NullPointerException{
-
-        try {
+        DuckRace duckRace = DuckRace.getInstance();
 
 
-            for(int j = 0; j < 10; j++) {
-                queueList.add(j, new KimberlyQueue());
-                KimberlyQueue queue = queueList.get(j);
-                for (int i = 0; i < 10; i++) {
-                    queue.addToQueue(i);
-                }
-            }
-            System.out.println(duckNumberList.getDuckNumbers());
+
+    }
+
+
+
 
             /*
             ArrayList<KimberlyQueue> queues = new ArrayList<>();
@@ -44,10 +38,5 @@ public class Main {
             System.out.println("The queue has " + queue.getNumberOfDucks() + " ducks.");
 
              */
-        }
-        catch (NullPointerException nullPEx){
-            System.out.println("Cannot find queue.");
-        }
 
-    }
 }
