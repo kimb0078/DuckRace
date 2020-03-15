@@ -1,19 +1,23 @@
 package HomePackage;
 
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 
-public class Queue {
+public class KimberlyQueue {
+
+    Generator generator;
 
     private ArrayList<Duck> ducks = new ArrayList<>();
 
-    public void addToQueue(){
-        ducks.add(new Duck());
+    public void addToQueue(int i){
+        ducks.add(i,new Duck(generator.generate()));
     }
+
     public void removeFromQueue(){
         if(ducks.size() > 0) {
             ducks.remove(0);
         }
-        else{
+        if(ducks.size() == 0){
             System.out.println("No ducks in queue.");
         }
     }
@@ -21,4 +25,5 @@ public class Queue {
     public int getNumberOfDucks(){
         return ducks.size();
     }
+
 }

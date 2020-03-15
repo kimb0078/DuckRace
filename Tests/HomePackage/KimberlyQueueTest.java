@@ -1,27 +1,25 @@
 package HomePackage;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class QueueTest {
+class KimberlyQueueTest {
 
     ArrayList<Duck> ducks = new ArrayList<>();
 
+    //
     @Test
     void addToQueue() {
-        Duck duck = new Duck();
-        Duck duck1 = new Duck();
-        Duck duck2 = new Duck();
-        ducks.add(duck);
-        ducks.add(duck1);
-        ducks.add(duck2);
-        assertEquals(duck, ducks.get(0));
-        assertNotEquals(duck, ducks.get(1));
-        assertEquals(duck2, ducks.get(2));
+
+        System.out.println(ducks.get(1));
+        assertEquals(1, ducks.get(0));
+        assertNotEquals(3, ducks.get(1));
+        assertEquals(3, ducks.get(2));
     }
 
     @Test
@@ -31,17 +29,21 @@ class QueueTest {
             ducks.remove(0);
             assertNotEquals(duck, ducks.get(0));
         }
-        else{
+        if(ducks.size() == 0){
             System.out.println("No ducks in queue.");
         }
     }
 
     @Test
     void getNumberOfDucks() {
-        ducks.add(new Duck());
-        assertEquals(1, ducks.size());
+        assertEquals(10, ducks.size());
         assertNotEquals(2,ducks.size());
         assertFalse(ducks.isEmpty());
 
+    }
+
+    @Test
+    ArrayList<Duck> getDuckNumbers(){
+        return ducks;
     }
 }

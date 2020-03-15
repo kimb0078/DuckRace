@@ -1,17 +1,24 @@
 package HomePackage;
 
-import java.util.ArrayList;
-
 public class Duck {
 
+    Generator generator;
+    DuckNumberList duckNumberList;
 
-    private ArrayList<Integer> duckNumbers = new ArrayList<>();
+    private int duckNumber;
 
-    public Duck() {
-        duckNumbers.add((duckNumbers.size()+1));
+    public Duck(int duckNumber) {
+        this.duckNumber = duckNumber;
+        //duckNumberList.addNumber(duckNumber);
     }
 
-    public ArrayList<Integer> getDuckNumbers() {
-        return duckNumbers;
+    public void setDuckNumber(){
+        duckNumber = generator.generate();
+        duckNumberList.addNumber(duckNumber);
+    }
+
+
+    public int getDuckNumber() {
+        return duckNumber;
     }
 }

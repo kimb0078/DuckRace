@@ -2,18 +2,26 @@ package HomePackage;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class DuckTest {
 
-    ArrayList<Integer> duckNumbers = new ArrayList<>();
+    DuckNumberList duckNumberList;
+
+    private int duckNumber;
+
+    DuckTest(){
+        duckNumber = duckNumberList.getSize() + 1;
+        duckNumberList.addNumber(duckNumber);
+    }
 
     @Test
-    void getDuckNumbers() {
+    int getDuckNumber() {
+        return duckNumber;
+    }
 
-        duckNumbers.add(45);
-        assertFalse(duckNumbers.isEmpty());
+    @Test
+    void setDuckNumber(int duckNumber) {
+        this.duckNumber = duckNumber;
     }
 }
