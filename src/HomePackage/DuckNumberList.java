@@ -1,17 +1,17 @@
 package HomePackage;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.*;
 
 public class DuckNumberList {
 
-    private HashSet<Integer> duckNumberList = new HashSet<>();
+    private HashMap<Integer,Duck> duckNumberList = new HashMap<>();
 
     private static DuckNumberList duckNumberListInst = new DuckNumberList();
 
-    public HashSet<Integer> getDuckNumbers(){
-        return duckNumberList;
+    public Set<Integer> getDuckNumbers(){
+        return duckNumberList.keySet();
     }
+
 
     public int getSize(){
         return duckNumberList.size();
@@ -21,14 +21,17 @@ public class DuckNumberList {
         return duckNumberListInst;
     }
 
-    public void addNumber(int number){
-        duckNumberList.add(number);
+    public void addNumber(int number, Duck duck){
+        duckNumberList.put(number, duck);
     }
 
     public void removeOneNumber(int number){
         duckNumberList.remove(number);
     }
 
+    public void removeFromList(int duckNumber){
+        duckNumberList.remove(duckNumber);
+    }
     public void removeAllNumbers(){
         duckNumberList.clear();
     }

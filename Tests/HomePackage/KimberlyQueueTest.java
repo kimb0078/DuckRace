@@ -1,6 +1,5 @@
 package HomePackage;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,24 +10,28 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class KimberlyQueueTest {
 
-    ArrayList<Duck> ducks = new ArrayList<>();
+    private static ArrayList<Duck> ducks = new ArrayList<>();
+    DuckNumberList duckNumberList = DuckNumberList.getInstance();
 
     @Test
     @BeforeEach
-    void setDucks(){
+    void addDuckToQueue() {
 
-        KimberlyQueue queue = new KimberlyQueue();
+        Duck duck = new Duck();
+        Duck duck1 = new Duck();
+        Duck duck2 = new Duck();
+        ducks.add(duck);
+        ducks.add(duck1);
+        ducks.add(duck2);
+        assertEquals(duck, ducks.get(0));
+        assertNotEquals(duck, ducks.get(1));
+        assertEquals(duck2, ducks.get(2));
 
-        for(int i = 0; i < 10;i++){
-            queue.addToQueue();
-        }
     }
-    @Test
-    void addToQueue() {
 
-        assertEquals(1, ducks.get(0).getDuckNumber());
-        assertNotEquals(3, ducks.get(1).getDuckNumber());
-        assertEquals(3, ducks.get(2).getDuckNumber());
+    @Test
+    public void addSpecificDuckToQueue(Duck duck) {
+        ducks.add(duck);
     }
 
     @Test
@@ -52,7 +55,24 @@ class KimberlyQueueTest {
     }
 
     @Test
-    ArrayList<Duck> getDuckNumbers(){
+    ArrayList<Duck> getDucks(){
         return ducks;
+    }
+
+    @Test
+    Duck getFromQueue() {
+        if(ducks.size() > 0) {
+            return ducks.get(0);
+        }
+        return null;
+    }
+
+    @Test
+    ArrayList<Integer> getDuckNumbers(){
+        ArrayList<Integer> duckNumbers = new ArrayList<>();
+        for(int i = 0; i < ducks.size(); i++){
+            duckNumbers.add(ducks.get(i).getDuckNumber());
+        }
+        return duckNumbers;
     }
 }
