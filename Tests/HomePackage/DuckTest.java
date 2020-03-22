@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DuckTest {
 
-    DuckNumberList duckNumberList = DuckNumberList.getInstance();
+
     Generator generator = Generator.getInstance();
 
     private int duckNumber;

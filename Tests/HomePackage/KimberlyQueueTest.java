@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class KimberlyQueueTest {
 
     private static ArrayList<Duck> ducks = new ArrayList<>();
-    DuckNumberList duckNumberList = DuckNumberList.getInstance();
 
     @Test
     @BeforeEach

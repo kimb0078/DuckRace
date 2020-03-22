@@ -1,11 +1,10 @@
 package HomePackage;
-import HomePackage.Generator;
 
 import java.util.Random;
 
 public class Duck {
 
-    DuckNumberList duckNumberList = DuckNumberList.getInstance();
+
     Generator generator = Generator.getInstance();
 
     private int duckNumber;
@@ -16,10 +15,6 @@ public class Duck {
 
     public int getDuckNumber() {
         return duckNumber;
-    }
-
-    public void removeDuck(int duckNumber){
-        duckNumberList.removeFromList(duckNumber);
     }
 
     //Denne metode blev fundet på https://mkyong.com/java/java-generate-random-integers-in-a-range/

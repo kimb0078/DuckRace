@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DuckRaceTest {
 
-    private static DuckNumberList duckNumberList = DuckNumberList.getInstance();
     private static ArrayList<KimberlyQueue> queueList = new ArrayList<KimberlyQueue>();
     private static ArrayList<KimberlyQueue> queueList2 = new ArrayList<KimberlyQueue>();
 
@@ -99,8 +98,5 @@ class DuckRaceTest {
             queueList.remove(0);
         }
         assertTrue(queueList.isEmpty());
-
-        duckNumberList.removeAllNumbers();
-        assertEquals(0, duckNumberList.getSize());
     }
 }
