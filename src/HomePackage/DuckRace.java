@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class DuckRace {
 
-    private static DuckNumberList duckNumberList = DuckNumberList.getInstance();
     private static ArrayList<KimberlyQueue> queueList = new ArrayList<>();
     private static ArrayList<KimberlyQueue> queueList2 = new ArrayList<>();
 

@@ -12,14 +12,13 @@ public class Duck {
 
     public Duck() {
 
-        Boolean isNumberSet = false;
+        boolean isNumberSet = false;
 
-        while (isNumberSet == false) {
+        while (!isNumberSet) {
             int temp = generator.generate();
 
             if (!duckNumberList.getDuckNumbers().contains(temp)) {
                 this.duckNumber = temp;
-                duckNumberList.addNumber(duckNumber, this);
                 isNumberSet = true;
             }
         }
