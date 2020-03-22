@@ -44,7 +44,7 @@ public class DuckRace {
                 KimberlyQueue queue2 = queueList2.get(i);
 
                 for (int j = 0; j < number; j++) {
-                    KimberlyQueue randomQueue = queueList.get(getRandomNumberInRange(0, number - 1));
+                    KimberlyQueue randomQueue = queueList.get(getRandomNumberInRange(0, number));
                     Duck duck = randomQueue.getFromQueue();
                     if(duck == null){
                         j--;
