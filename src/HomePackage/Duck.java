@@ -11,17 +11,7 @@ public class Duck {
     private int duckNumber;
 
     public Duck() {
-
-        boolean isNumberSet = false;
-
-        while (!isNumberSet) {
-            int temp = generator.generate();
-
-            if (!duckNumberList.getDuckNumbers().contains(temp)) {
-                this.duckNumber = temp;
-                isNumberSet = true;
-            }
-        }
+        this.duckNumber = generator.generate();
     }
 
     public int getDuckNumber() {
