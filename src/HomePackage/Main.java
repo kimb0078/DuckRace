@@ -15,6 +15,8 @@ public class Main {
                 duckRace.printDucks();
             }
 
+            System.out.println("We have a winner!");
+
         }
         catch (IndexOutOfBoundsException e){
             e.printStackTrace();
